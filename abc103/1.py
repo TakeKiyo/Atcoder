@@ -1,9 +1,5 @@
-a,b,c = map(int,input().split())
+n = list(map(int,input().split()))
 num = 0
-n = []
-n.append(a)
-n.append(b)
-n.append(c)
 n.sort()
 mini = min(n)
 n.remove(min(n))
