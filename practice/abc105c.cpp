@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+#define rep(i,n) for(int (i)=0;(i)<(n);(i)++)
+#define all(x) (x).begin(),(x).end()
+#define INF 10000000
+using ll = long long ;
+ll gcd(ll a, ll b) {
+  if(b == 0) return a;
+  return gcd(b, a % b);
+}
+template< int id > struct CompTupleBy
+{
+  template<class T> 
+  bool operator()( const T& a, const T& b ) const {
+    return std::get<id>(a) < std::get<id>(b);
+  }
+};
+
+using namespace std;
+
+int main(){
+    ll n;
+    cin >> n;
+    string str = "";
+    while (n != 0){
+        int r=n%2;
+        if (r<0) r += 2;
+        n = (n-r)/(-2);
+        str += (char)('0'+r);
+    }
+    reverse(all(str));
+    if (str=="") str = "0";
+    cout << str << endl;
+
+    
+}
