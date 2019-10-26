@@ -20,6 +20,20 @@ using namespace std;
 int main(){
     cin.tie(0);
     ios::sync_with_stdio(false);
-    
-    
+
+    int n;
+    cin >> n;
+
+    map<int,int> mp;
+    rep(i,n){
+        int a;
+        cin >> a;
+        mp[a] += 1;
+    }
+    int ans = 0;
+    for(auto& item : mp){
+        if (item.first > item.second) ans += item.second;
+        else if(item.first < item.second) ans += item.second-item.first;
+    }
+    cout << ans << endl;
 }

@@ -20,6 +20,21 @@ using namespace std;
 int main(){
     cin.tie(0);
     ios::sync_with_stdio(false);
+
+    int n,k;
+    cin >> n >> k;
+    vector<int> vec(n+1,0);
+    rep(i,n){
+        int a;
+        cin >> a;
+        vec[a] += 1;
+    }
+    sort(all(vec));
+    int ans=0;
+    for(int i=0;i<=n-k;i++){
+        ans += vec[i];
+    }
+    cout << ans << endl;
     
     
 }

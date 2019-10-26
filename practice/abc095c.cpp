@@ -18,8 +18,12 @@ template< int id > struct CompTupleBy
 using namespace std;
 
 int main(){
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-    
-    
+    int a,b,c,x,y;
+    cin >> a >> b >>c >> x >> y;
+    ll ans = 100000000000000000;
+    for (int i=0;i<=100000;i++){
+        ll tmp = i*2*c + a * max(0,x-i) + b*max(0,y-i);
+        ans = min(ans,tmp);
+    }
+    cout << ans << endl;
 }

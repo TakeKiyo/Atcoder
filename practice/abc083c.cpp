@@ -20,6 +20,14 @@ using namespace std;
 int main(){
     cin.tie(0);
     ios::sync_with_stdio(false);
-    
+
+    ll x,y;
+    cin >> x >> y;
+    ll cnt=0;
+    while(x <= y){
+        x *= 2;
+        cnt += 1;
+    }
+    cout << cnt << endl;
     
 }

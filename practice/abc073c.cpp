@@ -20,6 +20,28 @@ using namespace std;
 int main(){
     cin.tie(0);
     ios::sync_with_stdio(false);
+
+    int n;
+    cin >> n;
+    map<int,int> mp;
+    rep(i,n){
+        int a;
+        cin >> a;
+        if (mp.find(a) == mp.end()){
+            mp[a] = 1;
+        }else if(mp[a] == 1){
+            mp[a] = 0;
+        }else{
+            mp[a] = 1;
+        }
+    }
+    int ans = 0;
+    for(auto itr=mp.begin();itr != mp.end();itr++){
+        if (itr->second == 1){
+            ans += 1;
+        }
+    }
+    cout << ans << endl;
     
     
 }

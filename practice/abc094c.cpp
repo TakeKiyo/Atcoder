@@ -18,8 +18,23 @@ template< int id > struct CompTupleBy
 using namespace std;
 
 int main(){
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-    
-    
+    int n;
+    cin >> n;
+    vector<int> vec(n);
+    vector<int> sorted(n);
+    rep(i,n){
+        int tmp;cin>>tmp;
+        vec[i]=tmp;
+        sorted[i] = tmp;
+    }
+    sort(all(sorted));
+    int first = sorted[n/2-1];
+    int second = sorted[n/2];
+    rep(i,n){
+        if (vec[i]<=first){
+            cout << second << endl;
+        }else{
+            cout << first << endl;
+        }
+    }
 }

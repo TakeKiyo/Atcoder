@@ -18,8 +18,21 @@ template< int id > struct CompTupleBy
 using namespace std;
 
 int main(){
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-    
+    int h,w;
+    cin >> h >> w;
+    char c[h+2][w+2];
+    rep(i,h){
+        rep(j,w){
+            cin >> c[i+1][j+1];
+        }
+    }
+    int count = 0;
+    rep(i,h){
+        rep(j,w){
+            if (c[i+1][j+1]=='#' && c[i+1][j]!= '#' && c[i][j+1] != '#'&& c[i+2][j+1] != '#'&& c[i+1][j+2]!= '#') count += 1;
+        }
+    }
+    if (count==0) cout << "Yes" << endl;
+    else cout << "No" << endl;
     
 }
